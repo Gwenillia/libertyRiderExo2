@@ -28,6 +28,7 @@ class Form extends Component {
             const p = hashParams[i].split('=');
             if (decodeURIComponent(p[0]) === 'email') {
                 document.getElementById('email').value = decodeURIComponent(p[1]);
+                this.setState({ email: decodeURIComponent(p[1]) });
             }
         }
 
