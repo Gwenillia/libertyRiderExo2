@@ -1,0 +1,161 @@
+.form {
+    border-radius : 1rem;
+    box-shadow    : rgba(0, 0, 0, 0.15) 0rem 0.2rem 0.8rem 0.2rem;
+    padding       : 4rem;
+    background    : white;
+    }
+
+h2 {
+    color        : var(--orange);
+    font-weight  : 600;
+    text-align   : center;
+    width        : 75%;
+    margin-left  : auto;
+    margin-right : auto;
+    }
+
+h2 ~ a {
+    font-weight     : 400;
+    margin-top      : 3rem;
+    display         : block;
+    margin-bottom   : 3rem;
+    text-align      : center;
+    text-decoration : none;
+    color           : rgb(77, 164, 212) !important;
+    }
+
+form {
+    display   : flex;
+    flex-flow : column;
+    }
+
+form div {
+    margin-bottom : 2rem;
+    }
+
+input:not([type='checkbox']), textarea {
+    border        : .1rem solid gray;
+    outline       : none;
+    padding       : 2rem;
+    width         : 100%;
+    border-radius : 1rem;
+    background    : white;
+    }
+
+input:focus, textarea:focus {
+    border : .1rem solid var(--orange);
+    }
+
+.dataInput {
+    position : relative;
+    }
+
+.dataInput label {
+    position    : absolute;
+    left        : 2rem;
+    top         : 2rem;
+    font-size   : 1.6rem;
+    font-weight : 400;
+    color       : gray;
+    transition  : all .3s ease;
+    }
+
+.dataInput label.notEmpty {
+    top       : 0.5rem;
+    font-size : 1.2rem;
+    }
+
+/*.notEmpty {*/
+/*    top       : 0.5rem !important;*/
+/*    font-size : 1.2rem !important;*/
+/*    }*/
+
+.dataInput textarea {
+    padding-top : 5rem;
+    overflow    : hidden;
+    resize      : none;
+    min-height  : 15rem;
+    }
+
+.dataInput textarea::placeholder {
+    color : black;
+    }
+
+.hint {
+    color      : var(--orange);
+    position   : absolute;
+    top        : 0.5rem;
+    font-size  : 1.2rem;
+    right      : 2rem;
+    width      : 35%;
+    text-align : end;
+    }
+
+input[type='submit'] {
+    background-color : var(--orange);
+    color            : white;
+    width            : 23rem;
+    align-self       : center;
+    outline          : none;
+    border           : none;
+    padding-bottom   : 2.3rem;
+    margin-bottom    : 2rem;
+    cursor           : pointer;
+    }
+
+input[type='submit']:hover {
+    background : rgba(255, 97, 88, 0.8)
+    }
+
+input[type='submit']:active {
+    transform : translateY(0.2rem);
+    }
+
+input:invalid {
+    box-shadow : none;
+    }
+
+input[type='checkbox'] {
+    transform  : scale(2);
+    align-self : flex-start;
+    }
+
+form div:last-of-type {
+    font-size     : 1.6rem;
+    display       : flex;
+    gap           : 2rem;
+    margin-bottom : 4rem;
+    margin-top    : 2rem;
+    }
+
+#consent ~ label {
+    display : block;
+    }
+
+h2, h2 ~ a, input[type='submit'] {
+    font-size : var(--mobFontSize);
+    }
+
+@media screen and (min-width : 1000px) {
+    .form {
+        margin-bottom : 5rem;
+        min-width     : 50rem;
+        width         : 50rem;
+        }
+
+    h2 {
+        font-size : var(--desFontSizeS);
+        }
+    }
+
+@media screen and (min-width : 1500px) {
+    h2 {
+        font-size : var(--desFontSizeM);
+        }
+    }
+
+@media screen and (min-width : 1920px) {
+    h2 {
+        font-size : var(--desFontSizeL);
+        }
+    }
