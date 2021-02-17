@@ -31,22 +31,14 @@ class Form extends Component {
             }
         }
 
-        // const emailInput = document.getElementById('email');
-        // if (emailInput.value) {
-        //     emailInput.nextElementSibling.classList.add('notEmpty');
-        //     if (emailInput.value.match(mailRegex)) {
-        //         emailInput.parentNode.lastChild.style.visibility = 'hidden';
-        //     }
-        // }
-
-
         let dataInput = document.getElementsByClassName('dataInput');
         for (let i = 0; i < 4; i++) {
-            console.log(dataInput[i].lastChild);
-            console.log(dataInput[i].childNodes[0].value);
-            if (dataInput[i].childNodes[0].value && dataInput[2].childNodes[0].value.match(mailRegex)) {
-                dataInput[i].lastChild.style.visibility = 'hidden';
-                dataInput[i].children[1].classList.add('notEmpty');
+            dataInput[i].lastChild.style.visibility = 'hidden';
+            dataInput[i].children[1].classList.add('notEmpty');
+            if (dataInput[i].childNodes[0].value) {
+                if (!dataInput[2].childNodes[0].value.match(mailRegex)) {
+                    dataInput[i].lastChild.style.visibility = 'visible';
+                }
             }
         }
     }
