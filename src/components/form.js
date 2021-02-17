@@ -32,11 +32,12 @@ class Form extends Component {
             }
         }
 
+        // preparation des inputs, labels et hints au chargement
         let dataInput = document.getElementsByClassName('dataInput');
         for (let i = 0; i < 4; i++) {
             dataInput[i].lastChild.style.visibility = 'hidden';
-            dataInput[i].children[1].classList.add('notEmpty');
             if (dataInput[i].childNodes[0].value) {
+                dataInput[i].children[1].classList.add('notEmpty');
                 if (!dataInput[2].childNodes[0].value.match(mailRegex)) {
                     dataInput[i].lastChild.style.visibility = 'visible';
                 }
