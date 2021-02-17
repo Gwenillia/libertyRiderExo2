@@ -26,8 +26,6 @@ class Form extends Component {
         const hashParams = window.location.hash.substr(3).split('&');
         for (let i = 0; i < hashParams.length; i++) {
             const p = hashParams[i].split('=');
-            console.log(decodeURIComponent(p[1]));
-            console.log(decodeURIComponent(p[0]));
             if (decodeURIComponent(p[0]) === 'email') {
                 document.getElementById('email').value = decodeURIComponent(p[1]);
             }
@@ -55,8 +53,6 @@ class Form extends Component {
         }
 
         if ((value && (target.type !== 'checkbox' && target.type !== 'password') && ((name === 'email' && value.match(mailRegex)) || name !== 'assurance' && name !== 'email')) || (target.type === 'password' && value.length > 7)) {
-            // if (value && (target.name = 'password' && value.length > 7)) {
-            // console.log(hint);
             hint.style.visibility = 'hidden';
         } else {
             hint.style.visibility = 'visible';
@@ -71,9 +67,6 @@ class Form extends Component {
     handleSubmit(event) {
         event.preventDefault();
         if (this.state.email.match(mailRegex) && (this.state.consent && this.state.prenom && this.state.nom && this.state.pass.length > 7)) {
-            // console.log('test');
-
-            // debugger;
             ReactGA.event({
                 category: 'Bouton',
                 action: 'Click sur le bouton s\'inscrire (avec validation)'
@@ -92,7 +85,6 @@ class Form extends Component {
             category: 'Bouton',
             action: 'Click sur le bouton j\'ai déjà un compte'
         });
-        // console.log(event.target.tagName);
         window.location = 'https://liberty-rider.com/';
     }
 

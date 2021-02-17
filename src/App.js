@@ -7,14 +7,6 @@ import Landing from './page/landing';
 
 import ReactGa from 'react-ga';
 
-// import TagManager from 'react-gtm-module';
-//
-// const tagManagerArgs = {
-//     gtmId: 'GTM-TM5RGVW'
-// };
-//
-// TagManager.initialize(tagManagerArgs);
-
 function App() {
 
     useEffect(() => {
