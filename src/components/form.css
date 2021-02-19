@@ -17,7 +17,10 @@ h2 {
 h2 ~ a {
     font-weight     : 400;
     margin-top      : 3rem;
-    display         : block;
+    display         : inline-block;
+    position        : relative;
+    left            : 50%;
+    transform       : translateX(-50%);
     margin-bottom   : 3rem;
     text-align      : center;
     text-decoration : none;
