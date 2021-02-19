@@ -58,6 +58,7 @@ input:focus, textarea:focus {
     font-weight : 400;
     color       : gray;
     transition  : all .3s ease;
+    cursor      : text;
     }
 
 .dataInput label.notEmpty {
@@ -113,6 +114,7 @@ input:invalid {
 input[type='checkbox'] {
     transform  : scale(2);
     align-self : flex-start;
+    cursor     : pointer;
     }
 
 form div:last-of-type {
