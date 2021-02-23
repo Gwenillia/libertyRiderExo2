@@ -14,6 +14,7 @@ const Main = styled.main`
     @media screen and (min-width: 1000px) {
         display: flex;
         padding-top: 20rem;
+        padding-bottom: 10rem;
         background: url(${bgImage}) no-repeat;
         background-size: cover;
         flex-flow: row;
