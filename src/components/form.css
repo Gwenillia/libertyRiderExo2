@@ -5,15 +5,6 @@
     background: white;
 }
 
-/* h2 {
-    color: var(--orange);
-    font-weight: 600;
-    text-align: center;
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-} */
-
 h2 ~ a {
     font-weight: 400;
     margin-top: 3rem;
@@ -36,6 +27,10 @@ form div {
     margin-bottom: 2rem;
 }
 
+.dataInput {
+    position: relative;
+}
+
 input:not([type="checkbox"]),
 textarea {
     border: 0.1rem solid gray;
@@ -49,10 +44,6 @@ textarea {
 input:focus,
 textarea:focus {
     border: 0.1rem solid var(--orange);
-}
-
-.dataInput {
-    position: relative;
 }
 
 .dataInput textarea {
