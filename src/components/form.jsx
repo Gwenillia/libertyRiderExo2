@@ -24,6 +24,15 @@ const H2 = styled.h2`
     width: 75%;
     margin-left: auto;
     margin-right: auto;
+    @media screen and (min-width: 1000px) {
+        font-size: var(--desFontSizeS);
+    }
+    @media screen and (min-width: 1500px) {
+        font-size: var(--desFontSizeM);
+    }
+    @media screen and (min-width: 1920px) {
+        font-size: var(--desFontSizeL) !important;
+    }
 `;
 
 const Wrapper = styled.div`
@@ -31,6 +40,11 @@ const Wrapper = styled.div`
     box-shadow: rgba(0, 0, 0, 0.15) 0rem 0.2rem 0.8rem 0.2rem;
     padding: 4rem;
     background: white;
+    @media screen and (min-width: 1000px) {
+        margin-bottom: 5rem;
+        min-width: 50rem;
+        width: 50rem;
+    }
 `;
 
 const GotAccount = styled.a`

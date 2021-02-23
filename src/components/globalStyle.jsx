@@ -30,6 +30,10 @@ body {
 a, a:visited, a:focus, a:hover {
     color : black;
     }
+
+h2, h2  a, input[type="submit"]{
+    font-size: var(--mobFontSize);
+}
 `;
 
 export default function GlobalStyle() {

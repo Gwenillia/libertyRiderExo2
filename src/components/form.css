@@ -24,17 +24,6 @@ textarea:focus {
     color: black;
 }
 
-/* .hint {
-    color: var(--orange);
-    position: absolute;
-    top: 0.5rem;
-    font-size: 1.2rem;
-    right: 2rem;
-    width: 35%;
-    text-align: end;
-    visibility: hidden;
-} */
-
 input:invalid {
     box-shadow: none;
 }
@@ -55,34 +44,4 @@ form div:last-of-type {
 
 #consent ~ label {
     display: block;
-}
-
-h2,
-h2 ~ a,
-input[type="submit"] {
-    font-size: var(--mobFontSize);
-}
-
-@media screen and (min-width: 1000px) {
-    .form {
-        margin-bottom: 5rem;
-        min-width: 50rem;
-        width: 50rem;
-    }
-
-    h2 {
-        font-size: var(--desFontSizeS);
-    }
-}
-
-@media screen and (min-width: 1500px) {
-    h2 {
-        font-size: var(--desFontSizeM);
-    }
-}
-
-@media screen and (min-width: 1920px) {
-    h2 {
-        font-size: var(--desFontSizeL);
-    }
 }
