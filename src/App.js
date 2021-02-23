@@ -6,6 +6,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import Landing from './page/landing';
 
 import ReactGa from 'react-ga';
+import GlobalStyle from './components/globalStyle';
 
 function App() {
 
@@ -14,11 +15,14 @@ function App() {
         ReactGa.pageview(window.location.pathname + window.location.search);
     }, []);
     return (
+        <>
+        <GlobalStyle/>
         <HashRouter>
             <Switch>
                 <Route exact path="/" component={Landing}/>
             </Switch>
         </HashRouter>
+        </>
     );
 }
 

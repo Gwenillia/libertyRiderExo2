@@ -1,3 +1,7 @@
+import React from 'react';
+import { Global, css } from '@emotion/react';
+
+export const styles = css`
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;800&display=swap');
 
 :root {
@@ -26,3 +30,8 @@ body {
 a, a:visited, a:focus, a:hover {
     color : black;
     }
+`;
+
+export default function GlobalStyle() {
+  return <Global styles={styles} />;
+}
