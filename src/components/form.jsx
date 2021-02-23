@@ -11,6 +11,10 @@ const mailRegex = '(?:[a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&\'*+/=?^_`{
 const FormComponent = styled.form`
   display: flex;
   flex-flow: column;
+  & div {
+      margin-bottom: 2rem;
+      position: relative
+  }
 `;
 
 const H2 = styled.h2`
@@ -20,6 +24,37 @@ const H2 = styled.h2`
     width: 75%;
     margin-left: auto;
     margin-right: auto;
+`;
+
+const Wrapper = styled.div`
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0rem 0.2rem 0.8rem 0.2rem;
+    padding: 4rem;
+    background: white;
+`;
+
+const GotAccount = styled.a`
+    font-weight: 400;
+    margin-top: 3rem;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 3rem;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(77, 164, 212) !important;
+`;
+
+const Hint = styled.p`
+    color: var(--orange);
+    position: absolute;
+    top: 0.5rem;
+    font-size: 1.2rem;
+    right: 2rem;
+    width: 35%;
+    text-align: end;
+    visibility: hidden;
 `;
 
 class Form extends Component {
@@ -33,8 +68,6 @@ class Form extends Component {
             assurance: '',
             consent: false
         };
-        
-        this.textInput = React.createRef();
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -51,11 +84,10 @@ class Form extends Component {
                 this.setState({ email: decodeURIComponent(p[1]) });
             }
         }
-
+        
         // preparation des inputs, labels et hints au chargement
         let dataInput = document.getElementsByClassName('dataInput');
         for (let i = 0; i < 4; i++) {
-            dataInput[i].lastChild.style.visibility = 'hidden';
             if (dataInput[i].childNodes[0].value) {
                 dataInput[i].children[1].classList.add('notEmpty');
                 if (!dataInput[2].childNodes[0].value.match(mailRegex)) {
@@ -115,34 +147,34 @@ class Form extends Component {
 
     render() {
         return (
-            <div className="form">
+            <Wrapper>
                 <H2>Crée ton compte Liberty Rider</H2>
-                <a href="https://liberty-rider.com/" target="_blank" onClick={this.clickHandler}>J'ai déjà un compte</a>
+                <GotAccount href="https://liberty-rider.com/" target="_blank" onClick={this.clickHandler}>J'ai déjà un compte</GotAccount>
                 <FormComponent>
                     <div className="dataInput">
                         <input id="prenom" name="prenom" type="text" value={this.state.value}
                                onChange={this.handleChange} required/>
                         <Label htmlFor="prenom">Prénom</Label>
-                        <p className="hint">Champ obligatoire</p>
+                        <Hint>Champ obligatoire</Hint>
                     </div>
                     <div className="dataInput">
                         <input id="nom" name="nom" type="text" value={this.state.value}
                                onChange={this.handleChange}
                                required/>
                         <Label htmlFor="nom">Nom</Label>
-                        <p className="hint">Champ obligatoire</p>
+                        <Hint>Champ obligatoire</Hint>
                     </div>
                     <div className="dataInput">
                         <input id="email" name="email" type="email" value={this.state.value}
                                onChange={this.handleChange} required/>
                         <Label htmlFor="email">Adresse email</Label>
-                        <p className="hint">Format invalide</p>
+                        <Hint>Format invalide</Hint>
                     </div>
                     <div className="dataInput">
                         <input id="pass" name="pass" type="password" value={this.state.value}
                                onChange={this.handleChange} required/>
                         <Label htmlFor="pass">Mot de passe</Label>
-                        <p className="hint">Ton mot de passe doit contenir 8 caractères</p>
+                        <Hint>Ton mot de passe doit contenir 8 caractères</Hint>
                     </div>
                     <div className="dataInput">
                         <textarea name="assurance" id="assurance" value={this.state.value}
@@ -161,8 +193,8 @@ class Form extends Component {
                     <Button type="submit" value="S&apos;inscrire" onClick={this.handleSubmit}/>
 
                 </FormComponent>
-                <a href="https://liberty-rider.com/" target="_blank" onClick={this.clickHandler}>J'ai déjà un compte</a>
-            </div>
+                <GotAccount href="https://liberty-rider.com/" target="_blank" onClick={this.clickHandler}>J'ai déjà un compte</GotAccount>
+            </Wrapper>
         );
 
     }
