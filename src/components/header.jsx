@@ -4,7 +4,6 @@ import styled from '@emotion/styled';
 
 const CustomHeader = styled.header`
     @media screen and (min-width:1000px){
-        margin-bottom: 20rem;
         margin-left: -10rem;
     }
 `;
