@@ -3,8 +3,18 @@ import './form.css';
 import * as ReactGA from 'react-ga';
 import { Button } from './styledButton/button';
 import { Label } from './styledLabel/label';
+import styled from '@emotion/styled';
 
 const mailRegex = '(?:[a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\\])';
+
+const H2 = styled.h2`
+    color: var(--orange);
+    font-weight: 600;
+    text-align: center;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+`;
 
 class Form extends Component {
     constructor(props) {
@@ -98,7 +108,7 @@ class Form extends Component {
     render() {
         return (
             <div className="form">
-                <h2>Crée ton compte Liberty Rider</h2>
+                <H2>Crée ton compte Liberty Rider</H2>
                 <a href="https://liberty-rider.com/" target="_blank" onClick={this.clickHandler}>J'ai déjà un compte</a>
                 <form>
                     <div className="dataInput">
