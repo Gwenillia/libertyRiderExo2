@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './form.css';
 import * as ReactGA from 'react-ga';
+import { Button } from './styledButton/button';
+import { Label } from './styledLabel/label';
 
 const mailRegex = '(?:[a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\\])';
 
@@ -102,33 +104,33 @@ class Form extends Component {
                     <div className="dataInput">
                         <input id="prenom" name="prenom" type="text" value={this.state.value}
                                onChange={this.handleChange} required/>
-                        <label htmlFor="prenom">Prénom</label>
+                        <Label htmlFor="prenom">Prénom</Label>
                         <p className="hint">Champ obligatoire</p>
                     </div>
                     <div className="dataInput">
                         <input id="nom" name="nom" type="text" value={this.state.value}
                                onChange={this.handleChange}
                                required/>
-                        <label htmlFor="nom">Nom</label>
+                        <Label htmlFor="nom">Nom</Label>
                         <p className="hint">Champ obligatoire</p>
                     </div>
                     <div className="dataInput">
                         <input id="email" name="email" type="email" value={this.state.value}
                                onChange={this.handleChange} required/>
-                        <label htmlFor="email">Adresse email</label>
+                        <Label htmlFor="email">Adresse email</Label>
                         <p className="hint">Format invalide</p>
                     </div>
                     <div className="dataInput">
                         <input id="pass" name="pass" type="password" value={this.state.value}
                                onChange={this.handleChange} required/>
-                        <label htmlFor="pass">Mot de passe</label>
+                        <Label htmlFor="pass">Mot de passe</Label>
                         <p className="hint">Ton mot de passe doit contenir 8 caractères</p>
                     </div>
                     <div className="dataInput">
                         <textarea name="assurance" id="assurance" value={this.state.value}
                                   placeholder="Cette info (optionnelle) permet de vérifier si ton assurance t&apos;offre Liberty Rider Premium."
                                   onChange={this.handleChange}/>
-                        <label htmlFor="assurance">Ton assurance</label>
+                        <Label htmlFor="assurance">Ton assurance</Label>
 
                     </div>
                     <div>
@@ -138,7 +140,7 @@ class Form extends Component {
                             href="#">charte de
                             confidentialité</a></label>
                     </div>
-                    <input type="submit" value="S&apos;inscrire" onClick={this.handleSubmit}/>
+                    <Button type="submit" value="S&apos;inscrire" onClick={this.handleSubmit}/>
 
                 </form>
                 <a href="https://liberty-rider.com/" target="_blank" onClick={this.clickHandler}>J'ai déjà un compte</a>
